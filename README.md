@@ -2,8 +2,6 @@
 
 React + Three.js implementation of classic Amiga demoscene blobvectors effect with real-time audio reactivity and parametric mathematical formations.
 
-![Blobvectors Demo](blob.png)
-
 ## Technical Overview
 
 **Core Stack:**
