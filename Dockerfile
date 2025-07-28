@@ -1,5 +1,5 @@
 # Multi-stage build for production-ready Blobvectors
-FROM node:18-alpine as builder
+FROM node:24-alpine as builder
 
 # Set working directory
 WORKDIR /app
