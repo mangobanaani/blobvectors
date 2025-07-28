@@ -1,0 +1,89 @@
+/* Reset and base styles for the blobvectors effect */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Courier New', monospace;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* Demoscene-style loading/fallback text */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #00ffff;
+  font-family: 'Courier New', monospace;
+  font-size: 24px;
+  text-shadow: 0 0 20px #00ffff;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Scanline effect for authentic retro feel */
+.App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    transparent 50%, 
+    rgba(0, 255, 255, 0.03) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* FPS Counter */
+.fps-counter {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: #00ffff;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  text-shadow: 0 0 10px #00ffff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid #00ffff;
+  z-index: 1001;
+  user-select: none;
+}
+
+/* Copyright text */
+.copyright {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #00ffff;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  text-shadow: 0 0 10px #00ffff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid #00ffff;
+  z-index: 1001;
+  user-select: none;
+  opacity: 0.8;
+}

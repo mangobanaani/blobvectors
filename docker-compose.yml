@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  blobvectors:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - blobvectors-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add a reverse proxy for SSL/custom domain
+  # nginx-proxy:
+  #   image: nginx:alpine
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - ./nginx-proxy.conf:/etc/nginx/nginx.conf
+  #   depends_on:
+  #     - blobvectors
+  #   networks:
+  #     - blobvectors-network
+
+networks:
+  blobvectors-network:
+    driver: bridge
+
+# Optional: Add volumes for persistent data
+# volumes:
+#   nginx-logs:
+#   app-data:

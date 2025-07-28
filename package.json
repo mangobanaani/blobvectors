@@ -1,0 +1,37 @@
+{
+  "name": "blobvectors",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Amiga demoscene blobvectors effect with mathematical formations",
+  "author": "mangobanaani",
+  "license": "MIT",
+  "keywords": ["demoscene", "amiga", "three.js", "react", "3d", "mathematics"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "docker:build": "docker build -t blobvectors .",
+    "docker:run": "docker run -p 3000:80 blobvectors",
+    "docker:compose": "docker-compose up --build"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.6.1",
+    "@react-three/fiber": "^9.2.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "three": "^0.178.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.30.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "vite": "^7.0.4"
+  }
+}

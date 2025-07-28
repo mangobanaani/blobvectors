@@ -1,0 +1,181 @@
+/* Controls Panel Styling */
+.controls-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+}
+
+.toggle-button {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ffff;
+  color: #00ffff;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  border-radius: 5px;
+  text-shadow: 0 0 10px #00ffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.toggle-button:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.controls-content {
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid #00ffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+  min-width: 300px;
+  max-width: 350px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.controls-content h3, .controls-content h4 {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.controls-content h4 {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.control-group {
+  margin-bottom: 15px;
+}
+
+.control-group label {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 5px;
+  font-size: 12px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.control-group select,
+.control-group input[type="range"] {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.control-group select {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  padding: 5px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+}
+
+.control-group select:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.control-group input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  outline: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #00ffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #00ffff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.control-group input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #00ffff;
+}
+
+.control-group button {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid #ff00ff;
+  color: #ff00ff;
+  padding: 8px 12px;
+  margin: 2px;
+  cursor: pointer;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #ff00ff;
+}
+
+.control-group button:hover {
+  background: rgba(255, 0, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  transform: scale(1.05);
+}
+
+/* Scrollbar styling */
+.controls-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.controls-content::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+
+.controls-content::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 4px;
+}
+
+.controls-content::-webkit-scrollbar-thumb:hover {
+  background: #ff00ff;
+}
+
+/* Closed state */
+.controls-panel.closed .controls-content {
+  display: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .controls-panel {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .controls-content {
+    min-width: 280px;
+    max-width: calc(100vw - 40px);
+    max-height: 70vh;
+  }
+}
