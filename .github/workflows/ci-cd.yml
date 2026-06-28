@@ -59,6 +59,7 @@ jobs:
       - name: Upload Trivy scan results
         uses: github/codeql-action/upload-sarif@v3
         if: always()
+        continue-on-error: true
         with:
           sarif_file: 'trivy-results.sarif'
 
@@ -106,11 +107,11 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  # Deploy to GitHub Pages
+  # Deploy to GitHub Pages (disabled: Pages not enabled for this repo)
   deploy:
     runs-on: ubuntu-latest
     needs: test
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: false
     permissions:
       contents: read
       pages: write
@@ -149,11 +150,11 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # Performance testing (optional)
+  # Performance testing (optional, depends on Pages deploy which is disabled)
   lighthouse:
     runs-on: ubuntu-latest
     needs: deploy
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: false
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
